@@ -12,7 +12,7 @@
   - for the specific language governing rights and limitations under the
   - License.
   -
-  - The Original Code is ReplaceType.
+  - The Original Code is RAYT.
   -
   - The Initial Developer of the Original Code is
   - Victor Engmark.
@@ -35,23 +35,23 @@
   - 
   - ***** END LICENSE BLOCK ***** -->
 
-<?xml-stylesheet href="chrome://replacetype/skin/overlay.css" type="text/css"?>
-<!DOCTYPE overlay SYSTEM "chrome://replacetype/locale/replacetype.dtd">
-<overlay id="replacetype-overlay"
+<?xml-stylesheet href="chrome://rayt/skin/overlay.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://rayt/locale/rayt.dtd">
+<overlay id="rayt-overlay"
          xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
   <script src="overlay.js"/>
   <stringbundleset id="stringbundleset">
-    <stringbundle id="replacetype-strings" src="chrome://replacetype/locale/replacetype.properties"/>
+    <stringbundle id="rayt-strings" src="chrome://rayt/locale/rayt.properties"/>
   </stringbundleset>
 
   <menupopup id="menu_ToolsPopup">
-    <menuitem id="replacetype-hello" label="&replacetype.label;" 
-              oncommand="replacetype.onMenuItemCommand(event);"/>
+    <menuitem id="rayt-hello" label="&rayt.label;" 
+              oncommand="rayt.onMenuItemCommand(event);"/>
   </menupopup>
   <popup id="contentAreaContextMenu">
-    <menuitem id="context-replacetype" label="&replacetypeContext.label;"
-              accesskey="&replacetypeContext.accesskey;"
+    <menuitem id="context-rayt" label="&raytContext.label;"
+              accesskey="&raytContext.accesskey;"
               insertafter="context-stop"
-              oncommand="replacetype.onMenuItemCommand(event)"/>
+              oncommand="rayt.onMenuItemCommand(event)"/>
   </popup>
 </overlay>

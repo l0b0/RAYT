@@ -12,7 +12,7 @@
   - for the specific language governing rights and limitations under the
   - License.
   -
-  - The Original Code is ReplaceType.
+  - The Original Code is RAYT.
   -
   - The Initial Developer of the Original Code is
   - Victor Engmark.
@@ -36,13 +36,13 @@
   - ***** END LICENSE BLOCK ***** -->
 
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
-<!DOCTYPE prefwindow SYSTEM "chrome://replacetype/locale/prefwindow.dtd">
-<prefwindow id="replacetypePreferences" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" title="&prefwindow.title;">
+<!DOCTYPE prefwindow SYSTEM "chrome://rayt/locale/prefwindow.dtd">
+<prefwindow id="raytPreferences" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" title="&prefwindow.title;">
   <prefpane id="pane1" label="&pane1.title;">
     <preferences>
-      <preference id="boolpref1" name="extensions.replacetype.boolpref" type="bool"/>
-      <preference id="intpref1" name="extensions.replacetype.intpref" type="int"/>
-      <preference id="stringpref1" name="extensions.replacetype.stringpref" type="string"/> <!-- note that this is only an ASCII string - use unichar for unicode strings -->
+      <preference id="boolpref1" name="extensions.rayt.boolpref" type="bool"/>
+      <preference id="intpref1" name="extensions.rayt.intpref" type="int"/>
+      <preference id="stringpref1" name="extensions.rayt.stringpref" type="string"/> <!-- note that this is only an ASCII string - use unichar for unicode strings -->
     </preferences>
     <checkbox id="checkboolpref" preference="boolpref1" label="&checkboolpref.label;" accesskey="&checkboolpref.accesskey;"/>
     <label accesskey="&intpref.accesskey;" control="textintpref">&intpref.label;</label><textbox id="textintpref" preference="intpref1"/>

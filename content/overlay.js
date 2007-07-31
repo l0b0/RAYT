@@ -11,7 +11,7 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is ReplaceType.
+ * The Original Code is RAYT.
  *
  * The Initial Developer of the Original Code is
  * Victor Engmark.
@@ -34,11 +34,11 @@
  * 
  * ***** END LICENSE BLOCK ***** */
 
-var replacetype = {
+var rayt = {
   onLoad: function() {
     // initialization code
     this.initialized = true;
-    this.strings = document.getElementById("replacetype-strings");
+    this.strings = document.getElementById("rayt-strings");
     document.getElementById("contentAreaContextMenu")
             .addEventListener("popupshowing", function(e) { this.showContextMenu(e); }, false);
   },
@@ -46,7 +46,7 @@ var replacetype = {
   showContextMenu: function(event) {
     // show or hide the menuitem based on what the context menu is on
     // see http://kb.mozillazine.org/Adding_items_to_menus
-    document.getElementById("context-replacetype").hidden = gContextMenu.onImage;
+    document.getElementById("context-rayt").hidden = gContextMenu.onImage;
   },
   onMenuItemCommand: function(e) {
     var promptService = Components.classes["@mozilla.org/embedcomp/prompt-service;1"]
@@ -56,4 +56,4 @@ var replacetype = {
   },
 
 };
-window.addEventListener("load", function(e) { replacetype.onLoad(e); }, false);
+window.addEventListener("load", function(e) { rayt.onLoad(e); }, false);

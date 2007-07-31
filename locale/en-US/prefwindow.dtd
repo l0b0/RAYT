@@ -1,5 +1,5 @@
-<!ENTITY prefwindow.title "ReplaceType preferences">
-<!ENTITY pane1.title "ReplaceType preferences">
+<!ENTITY prefwindow.title "RAYT preferences">
+<!ENTITY pane1.title "RAYT preferences">
 <!ENTITY checkboolpref.label "A Boolean Preference">
 <!ENTITY checkboolpref.accesskey "B">
 <!ENTITY intpref.label "An Integer Preference">

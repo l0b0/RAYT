@@ -12,7 +12,7 @@
   - for the specific language governing rights and limitations under the
   - License.
   -
-  - The Original Code is ReplaceType.
+  - The Original Code is RAYT.
   -
   - The Initial Developer of the Original Code is
   - Victor Engmark.
@@ -36,12 +36,12 @@
   - ***** END LICENSE BLOCK ***** -->
 
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
-<!DOCTYPE dialog SYSTEM "chrome://replacetype/locale/about.dtd">
-<dialog title="&about; ReplaceType" orient="vertical" autostretch="always" onload="sizeToContent()" buttons="accept" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+<!DOCTYPE dialog SYSTEM "chrome://rayt/locale/about.dtd">
+<dialog title="&about; rayt" orient="vertical" autostretch="always" onload="sizeToContent()" buttons="accept" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 <!-- Original template by Jed Brown -->
 <groupbox align="center" orient="horizontal">
 <vbox>
-  <text value="ReplaceType" style="font-weight: bold; font-size: x-large;"/>
+  <text value="rayt" style="font-weight: bold; font-size: x-large;"/>
   <text value="&version; 1.0"/>
   <separator class="thin"/>
   <text value="&createdBy;" style="font-weight: bold;"/>

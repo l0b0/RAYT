@@ -2,15 +2,15 @@
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
  xmlns:em="http://www.mozilla.org/2004/em-rdf#">
   <Description about="urn:mozilla:install-manifest">
-    <em:id>ret@l0b0.net</em:id>
-    <em:name>ReplaceType</em:name>
+    <em:id>rayt@l0b0.net</em:id>
+    <em:name>RAYT</em:name>
     <em:version>1.0</em:version>
     <em:creator>Victor Engmark</em:creator>
-    <em:description>Replaces text in forms while typing or on demand</em:description>
-    <em:homepageURL>http://l0b0.net/ret</em:homepageURL>
-    <em:aboutURL>chrome://replacetype/content/about.xul</em:aboutURL>
-    <em:optionsURL>chrome://replacetype/content/options.xul</em:optionsURL>
-    <em:iconURL>chrome://replacetype/content/replacetype.png</em:iconURL>
+    <em:description>Replace as you type</em:description>
+    <em:homepageURL>http://l0b0.net/rayt</em:homepageURL>
+    <em:aboutURL>chrome://rayt/content/about.xul</em:aboutURL>
+    <em:optionsURL>chrome://rayt/content/options.xul</em:optionsURL>
+    <em:iconURL>chrome://rayt/content/rayt.png</em:iconURL>
     <em:targetApplication>
       <Description>
         <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id> <!-- firefox -->

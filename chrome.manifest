@@ -1,4 +1,4 @@
-content	replacetype	content/
-locale	replacetype	en-US	locale/en-US/
-skin	replacetype	classic/1.0	skin/
-overlay	chrome://browser/content/browser.xul	chrome://replacetype/content/firefoxOverlay.xul
+content	rayt	content/
+locale	rayt	en-US	locale/en-US/
+skin	rayt	classic/1.0	skin/
+overlay	chrome://browser/content/browser.xul	chrome://rayt/content/firefoxOverlay.xul
