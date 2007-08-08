@@ -48,9 +48,9 @@
   <text value="Victor Engmark"/>
   <separator class="thin"/>
       <text value="&homepage;" style="font-weight: bold;"/>
-    <text value="http://l0b0.net/ret"
+    <text value="http://l0b0.net/rayt"
           class="url"
-        onclick="window.open('http://l0b0.net/ret'); window.close();"/>
+        onclick="window.open('http://l0b0.net/rayt'); window.close();"/>
   <separator class="thin"/>
 </vbox>
 </groupbox>
