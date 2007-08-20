@@ -1,3 +1,10 @@
-<!ENTITY rayt.label "Your localized menuitem">
-<!ENTITY raytContext.label "Your Menuitem">
-<!ENTITY raytContext.accesskey "Y">
+<!ENTITY rayt.label "RAYT">
+
+<!ENTITY raytReplaceAll.label "RAYT all">
+<!ENTITY raytReplaceAll.accesskey "a">
+
+<!ENTITY raytReplaceCurrent.label "RAYT this text field">
+<!ENTITY raytReplaceCurrent.accesskey "t">
+
+<!ENTITY raytReplaceSelection.label "RAYT selection">
+<!ENTITY raytReplaceSelection.accesskey "s">
