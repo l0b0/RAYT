@@ -44,14 +44,22 @@
     <stringbundle id="rayt-strings" src="chrome://rayt/locale/rayt.properties"/>
   </stringbundleset>
 
-  <menupopup id="menu_ToolsPopup">
-    <menuitem id="rayt-hello" label="&rayt.label;" 
-              oncommand="rayt.onMenuItemCommand(event);"/>
-  </menupopup>
   <popup id="contentAreaContextMenu">
-    <menuitem id="context-rayt" label="&raytContext.label;"
-              accesskey="&raytContext.accesskey;"
+    <menuitem id="context-rayt-replace-selection"
+		          label="&raytReplaceSelection.label;"
+              accesskey="&raytReplaceSelection.accesskey;"
               insertafter="context-stop"
-              oncommand="rayt.onMenuItemCommand(event)"/>
+              oncommand="rayt.replaceSelection(event)"/>
+    <menuitem id="context-rayt-replace-current"
+		          label="&raytReplaceCurrent.label;"
+              accesskey="&raytReplaceCurrent.accesskey;"
+              insertafter="context-stop"
+              oncommand="rayt.replaceCurrent(event)"/>
+    <menuitem id="context-rayt-replace-all"
+		          label="&raytReplaceAll.label;"
+              accesskey="&raytReplaceAll.accesskey;"
+              insertafter="context-stop"
+              oncommand="rayt.replaceAll(event)"/>
   </popup>
+
 </overlay>
