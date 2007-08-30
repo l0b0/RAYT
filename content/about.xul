@@ -39,19 +39,19 @@
 <!DOCTYPE dialog SYSTEM "chrome://rayt/locale/about.dtd">
 <dialog title="&about; rayt" orient="vertical" autostretch="always" onload="sizeToContent()" buttons="accept" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 <!-- Original template by Jed Brown -->
-<groupbox align="center" orient="horizontal">
-<vbox>
-  <text value="rayt" style="font-weight: bold; font-size: x-large;"/>
-  <text value="&version; 1.0"/>
-  <separator class="thin"/>
-  <text value="&createdBy;" style="font-weight: bold;"/>
-  <text value="Victor Engmark"/>
-  <separator class="thin"/>
-      <text value="&homepage;" style="font-weight: bold;"/>
-    <text value="http://l0b0.net/rayt"
-          class="url"
-        onclick="window.open('http://l0b0.net/rayt'); window.close();"/>
-  <separator class="thin"/>
-</vbox>
-</groupbox>
+	<groupbox align="center" orient="horizontal">
+		<vbox>
+			<text value="rayt" style="font-weight: bold; font-size: x-large;"/>
+			<text value="&version; 1.0"/>
+			<separator class="thin"/>
+			<text value="&createdBy;" style="font-weight: bold;"/>
+			<text value="Victor Engmark"/>
+			<separator class="thin"/>
+					<text value="&homepage;" style="font-weight: bold;"/>
+				<text value="http://l0b0.net/rayt"
+							class="url"
+						onclick="window.open('http://l0b0.net/rayt'); window.close();"/>
+			<separator class="thin"/>
+		</vbox>
+	</groupbox>
 </dialog>
