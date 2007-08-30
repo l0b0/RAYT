@@ -48,17 +48,14 @@
     <menuitem id="context-rayt-replace-selection"
 		          label="&raytReplaceSelection.label;"
               accesskey="&raytReplaceSelection.accesskey;"
-              insertafter="context-stop"
               oncommand="rayt.replaceSelection(event)"/>
     <menuitem id="context-rayt-replace-current"
 		          label="&raytReplaceCurrent.label;"
               accesskey="&raytReplaceCurrent.accesskey;"
-              insertafter="context-stop"
               oncommand="rayt.replaceCurrent(event)"/>
     <menuitem id="context-rayt-replace-all"
 		          label="&raytReplaceAll.label;"
               accesskey="&raytReplaceAll.accesskey;"
-              insertafter="context-stop"
               oncommand="rayt.replaceAll(event)"/>
   </popup>
 
