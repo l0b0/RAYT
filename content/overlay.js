@@ -51,8 +51,28 @@ var rayt = {
 
 		// Replace "number dash number" with "number endash number" (without spaces)
 		// Replace "non-number dash non-number" with "NN emdash NN" (with spaces)
-		// Replace "double quote, text, double quote" with "starting double quote etc."
 		// See jEdit for abbreviations
+		this.matchDoublePrimes = '"(\w.*?\w)"';
+		this.replaceDoublePrimesWithQuotes = '“$1”';
+		this.replaceDoublePrimesWithGuillemets = '«$1»';
+		this.replaceDoublePrimes = new Array('$1', this.replaceDoublePrimesWithQuotes, this.replaceDoublePrimesWithGuillemets);
+		
+		this.matchSinglePrimes = '\'(\w.*?\w)\'';
+		this.replaceSinglePrimesWithQuotes = '‘$1’';
+		this.replaceSinglePrimesWithGuillemets = '‹$1›';
+		this.replaceSinglePrimes = new Array('$1', this.replaceSinglePrimesWithQuotes, this.replaceSinglePrimesWithGuillemets);
+		
+		this.matchPrimeInWord = '([^0-9\s])\'([^0-9\s])';
+		this.replacePrimeInWordWithApostrophe = '$1’$2';
+		
+		this.matchTripleDots = '([^\.])\.\.\.([^\.])';
+		this.replaceTripleDotsWithEllipsis = '$1…$2';
+		
+		this.matchNumero = 'N[or](\s?\d)';
+		this.replaceNumero = '№$1';
+
+		this.matchRightArrow = '->';
+		this.replaceRightArrow = '→';
 	},
 
 	onDOMContentLoaded: function(event) {
@@ -86,7 +106,23 @@ var rayt = {
 		var selectionStart = textBox.selectionStart;
 		var selectionEnd   = textBox.selectionEnd;
 		var currentSelection = text.substring(selectionStart, selectionEnd);
-		var newSelection = currentSelection.replace(/\"(.*?)\"/g, "“$1”").replace(/(\d\s?)-(\s?\d)/g, "");
+		var newSelection = currentSelection.replace(/\"(.*?)\"/g, "“$1”").replace(/(\d\s?)-(\s?\d)/g, "$1–$2").replace(/(\D\s)-(\s\D)/g, "$1—$2").replace(/([^\.]|^)\.\.\.([^\.]|$)/g, "$1…$2").replace(/(\w)\*{2,}(\w)/g, "$1——$2");
+		var beforeSelection = text.substring(0, selectionStart);
+		var afterSelection = text.substring(selectionEnd, text.length);
+		
+		// Insert newSelection where currentSelection was
+		textBox.value = beforeSelection + newSelection + afterSelection; 
+	},
+
+	replaceText: function(event) {
+		// Replace all in current selection (must be in a textarea)
+		var textBox = document.commandDispatcher.focusedElement;
+		var text = textBox.value;
+
+		var selectionStart = textBox.selectionStart;
+		var selectionEnd   = textBox.selectionEnd;
+		var currentSelection = text.substring(selectionStart, selectionEnd);
+		var newSelection = currentSelection.replace(/\"(.*?)\"/g, "“$1”").replace(/(\d\s?)-(\s?\d)/g, "$1–$2").replace(/(\D\s)-(\s\D)/g, "$1—$2").replace(/([^\.]|^)\.\.\.([^\.]|$)/g, "$1…$2").replace(/(\w)\*{2,}(\w)/g, "$1——$2");
 		var beforeSelection = text.substring(0, selectionStart);
 		var afterSelection = text.substring(selectionEnd, text.length);
 		
