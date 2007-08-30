@@ -37,15 +37,55 @@
 
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
 <!DOCTYPE prefwindow SYSTEM "chrome://rayt/locale/prefwindow.dtd">
-<prefwindow id="raytPreferences" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" title="&prefwindow.title;">
+<prefwindow id="rayt-preferences" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" title="&prefwindow.title;">
   <prefpane id="pane1" label="&pane1.title;">
     <preferences>
-      <preference id="boolpref1" name="extensions.rayt.boolpref" type="bool"/>
+      <preference id="double_primes_style" name="extensions.rayt.double_primes_style" type="int"/>
+      <preference id="single_primes_style" name="extensions.rayt.single_primes_style" type="int"/>
+      <preference id="replace_prime_in_word" name="extensions.rayt.replace_prime_in_word" type="bool"/>
+      <preference id="replace_ellipsis" name="extensions.rayt.replace_ellipsis" type="bool"/>
+      <preference id="replace_numero" name="extensions.rayt.replace_numero" type="bool"/>
+      <!-- <preference id="boolpref1" name="extensions.rayt.boolpref" type="bool"/>
       <preference id="intpref1" name="extensions.rayt.intpref" type="int"/>
-      <preference id="stringpref1" name="extensions.rayt.stringpref" type="string"/> <!-- note that this is only an ASCII string - use unichar for unicode strings -->
+      <preference id="stringpref1" name="extensions.rayt.stringpref" type="string"/> note that this is only an ASCII string - use unichar for unicode strings -->
     </preferences>
-    <checkbox id="checkboolpref" preference="boolpref1" label="&checkboolpref.label;" accesskey="&checkboolpref.accesskey;"/>
-    <label accesskey="&intpref.accesskey;" control="textintpref">&intpref.label;</label><textbox id="textintpref" preference="intpref1"/>
-    <label accesskey="&stringpref.accesskey;" control="textstringpref">&stringpref.label;</label><textbox id="textstringpref" preference="stringpref1"/>
+		
+		<groupbox>
+			<caption label="&rayt.label;"/>
+
+			<hbox>
+				<label value="&replace_double_primes.label;" control="select_double_primes_style"/>
+				<menulist id="select_double_primes_style"
+									preference="double_primes_style">
+					<menupopup>
+						<menuitem class="disabled" label="&replace_double_primes.label; (&double_primes.name;)" value="0"/>
+						<menuitem label="“Quoted text” (&double_quotes.name;)" value="1"/>
+						<menuitem label="«Quoted text» (&double_guillemets.name;)" value="2"/>
+					</menupopup>
+				</menulist>
+			</hbox>
+
+			<hbox>
+				<label value="&replace_single_primes.label;" control="select_single_primes_style"/>
+				<menulist id="select_single_primes_style"
+									preference="single_primes_style">
+					<menupopup>
+						<menuitem class="disabled" label="&replace_single_primes.label; (&single_primes.name;)" value="0"/>
+						<menuitem label="‘Quoted text’ (&single_quotes.name;)" value="1"/>
+						<menuitem label="‹Quoted text› (&single_guillemets.name;)" value="2"/>
+					</menupopup>
+				</menulist>
+			</hbox>
+
+			<checkbox id="enable_replace_prime_in_word"
+								label="&replace_prime_in_word.label;"
+								preference="replace_prime_in_word"/>
+			<checkbox id="enable_replace_ellipsis"
+								label="&replace_ellipsis.label;"
+								preference="replace_ellipsis"/>
+			<checkbox id="enable_replace_numero"
+								label="&replace_numero.label;"
+								preference="replace_numero"/>
+		</groupbox>
   </prefpane>
 </prefwindow>
