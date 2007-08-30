@@ -1,8 +1,34 @@
 <!ENTITY prefwindow.title "RAYT preferences">
 <!ENTITY pane1.title "RAYT preferences">
-<!ENTITY checkboolpref.label "A Boolean Preference">
-<!ENTITY checkboolpref.accesskey "B">
-<!ENTITY intpref.label "An Integer Preference">
-<!ENTITY intpref.accesskey "I">
-<!ENTITY stringpref.label "A String Preference">
-<!ENTITY stringpref.accesskey "S">
+
+<!ENTITY rayt.label "Replace as you type">
+
+<!ENTITY text.example_1 "foo">
+<!ENTITY text.example_2 "bar">
+<!ENTITY number.example_1 "123">
+<!ENTITY number.example_2 "456">
+
+<!ENTITY double_primes.name "Double primes">
+<!ENTITY double_quotes.name "Double quotes">
+<!ENTITY double_guillemets.name "Double guillemets">
+<!ENTITY replace_double_primes.label "&quot;Quoted text&quot;">
+
+<!ENTITY single_primes.name "Single primes">
+<!ENTITY single_quotes.name "Single quotes">
+<!ENTITY single_guillemets.name "Single guillemets">
+<!ENTITY replace_single_primes.label "'Quoted text'">
+
+<!ENTITY apostrophes.name "Apostrophes">
+<!ENTITY replace_prime_in_word.label "Bob's → Bob’s, Max' → Max’ (&apostrophes.name;)">
+
+<!ENTITY ellipsis.name "Ellipsis">
+<!ENTITY replace_ellipsis.label "Some text... → Some text… (&ellipsis.name;)">
+
+<!ENTITY numero.name "Numero">
+<!ENTITY replace_numero.label "No123  → №123 (&numero.name;)">
+
+<!ENTITY select_double_primes_style.accesskey "D">
+<!ENTITY select_single_primes_style.accesskey "S">
+<!ENTITY use_replace_prime_in_word.accesskey "A">
+<!ENTITY replace_ellipsis.accesskey "E">
+<!ENTITY replace_numero.accesskey "N">
