@@ -42,7 +42,6 @@ var rayt = {
 		this.initialized = true;
 
 		this.strings = document.getElementById('rayt-strings');
-		this.prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefService).getBranch('extensions.rayt.');
 
 		document.getElementById('contentAreaContextMenu').addEventListener('popupshowing', rayt.showContextMenu, false);
 
@@ -50,64 +49,6 @@ var rayt = {
 		// Will I need a listener for onFocus for each tab as well?
 		document.getElementById('appcontent').addEventListener('DOMContentLoaded', rayt.onDOMContentLoaded, false);
 
-		// TODO: Don't look for things which are disabled!
-
-		// Double primes ("s)
-		this.matchDoublePrimes = '"(\w.*?\w)"';
-		switch (prefs.getCharPref('double_primes_style')) {
-		case 'quotes':
-			this.replaceDoublePrimes = '“$1”';
-			break;
-		case 'guillemets':
-			this.replaceDoublePrimes = '«$1»';
-			break;
-		default:
-			this.replaceDoublePrimes = '"$1"';
-		}
-		//alert(prefs.getCharPref('double_primes_style') + ' ' + replaceDoublePrimes);
-		
-		this.matchSinglePrimes = '\'(\w.*?\w)\'';
-		switch (prefs.getCharPref('single_primes_style')) {
-		case 'quotes':
-			this.replaceSinglePrimes = '‘$1’';
-			break;
-		case 'guillemets':
-			this.replaceSinglePrimes = '‹$1›';
-			break;
-		default:
-			this.replaceSinglePrimes = "'$1'";
-		}
-		//alert(prefs.getCharPref('single_primes_style') + ' ' + replaceSinglePrimes);
-		
-		this.matchPrimeInWord = "([^0-9\s])'([^0-9\s])"; // Ignores feet'inches notation
-		if (prefs.getBoolPref('replace_prime_in_word')) {
-			this.replacePrimeInWord = '$1’$2';
-		} else {
-			this.replacePrimeInWord = "$1'$2";
-		}
-		//alert(replacePrimeInWord);
-		
-		this.matchTripleDots = '([^\.])\.\.\.([^\.])';
-		if (prefs.getBoolPref('replace_triple_dots')) {
-			this.replaceTripleDots = '$1…$2';
-		} else {
-			this.replaceTripleDots = "$1...$2";
-		}
-		//alert(replaceTripleDots);
-		
-		this.matchNo = '(N[or])(\s?\d)';
-		if (prefs.getBoolPref('replace_no')) {
-			this.replaceNo = '№$2';
-		} else {
-			this.replaceNo = "$1$2";
-		}
-		//alert(replaceNo);
-
-		// Replace "number dash number" with "number endash number" (without spaces)
-		// Replace "non-number dash non-number" with "NN emdash NN" (with spaces)
-		// See jEdit for abbreviations
-		//this.matchRightArrow = '->';
-		//this.replaceRightArrow = '→';
 	},
 
 	onDOMContentLoaded: function(event) {
@@ -150,20 +91,72 @@ var rayt = {
 		textBox.value = beforeSelection + newSelection + afterSelection; 
 	},
 
-	replaceText: function(event) {
-		// Replace all in current selection (must be in a textarea)
-		var textBox = document.commandDispatcher.focusedElement;
-		var text = textBox.value;
-
-		var selectionStart = textBox.selectionStart;
-		var selectionEnd   = textBox.selectionEnd;
-		var currentSelection = text.substring(selectionStart, selectionEnd);
-		var newSelection = currentSelection.replace(/\"(.*?)\"/g, "“$1”").replace(/(\d\s?)-(\s?\d)/g, "$1–$2").replace(/(\D\s)-(\s\D)/g, "$1—$2").replace(/([^\.]|^)\.\.\.([^\.]|$)/g, "$1…$2").replace(/(\w)\*{2,}(\w)/g, "$1——$2");
-		var beforeSelection = text.substring(0, selectionStart);
-		var afterSelection = text.substring(selectionEnd, text.length);
+	replaceDoublePrimes: function(text) {
 		
-		// Insert newSelection where currentSelection was
-		textBox.value = beforeSelection + newSelection + afterSelection; 
+	},
+
+	replaceText: function(text) {
+		this.prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefService).getBranch('extensions.rayt.');
+		// TODO: Don't look for things which are disabled!
+		
+		// Do the easy, unambiguous things first
+		this.matchPrimeInWord = "([^0-9\s])'([^0-9\s])"; // Ignores feet'inches notation
+		if (prefs.getBoolPref('replace_prime_in_word')) {
+			this.replacePrimeInWord = '$1’$2';
+		} else {
+			this.replacePrimeInWord = "$1'$2";
+		}
+		//alert(replacePrimeInWord);
+		
+		this.matchTripleDots = '([^\.])\.\.\.([^\.])';
+		if (prefs.getBoolPref('replace_triple_dots')) {
+			this.replaceTripleDots = '$1…$2';
+		} else {
+			this.replaceTripleDots = "$1...$2";
+		}
+		//alert(replaceTripleDots);
+		
+		this.matchNo = '(N[or])(\s?\d)';
+		if (prefs.getBoolPref('replace_no')) {
+			this.replaceNo = '№$2';
+		} else {
+			this.replaceNo = "$1$2";
+		}
+		//alert(replaceNo);
+
+		// Connected strings (harder, but just as important)
+		// Double primes ("s)
+		this.matchDoublePrimes = '"(\w.*?\w)"';
+		switch (prefs.getCharPref('double_primes_style')) {
+		case 'quotes':
+			this.replaceDoublePrimes = '“$1”';
+			break;
+		case 'guillemets':
+			this.replaceDoublePrimes = '«$1»';
+			break;
+		default:
+			this.replaceDoublePrimes = '"$1"';
+		}
+		//alert(prefs.getCharPref('double_primes_style') + ' ' + replaceDoublePrimes);
+		
+		this.matchSinglePrimes = "'(\w.*?\w)'";
+		switch (prefs.getCharPref('single_primes_style')) {
+		case 'quotes':
+			this.replaceSinglePrimes = '‘$1’';
+			break;
+		case 'guillemets':
+			this.replaceSinglePrimes = '‹$1›';
+			break;
+		default:
+			this.replaceSinglePrimes = "'$1'";
+		}
+		//alert(prefs.getCharPref('single_primes_style') + ' ' + replaceSinglePrimes);
+		
+		// Replace "number dash number" with "number endash number" (without spaces)
+		// Replace "non-number dash non-number" with "NN emdash NN" (with spaces)
+		// See jEdit for abbreviations
+		//this.matchRightArrow = '->';
+		//this.replaceRightArrow = '→';
 	},
 
 	// See http://kb.mozillazine.org/Adding_items_to_menus
