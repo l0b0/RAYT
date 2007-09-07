@@ -8,15 +8,15 @@
 <!ENTITY number.example_1 "123">
 <!ENTITY number.example_2 "456">
 
-<!ENTITY double_primes.name "Double primes">
-<!ENTITY double_quotes.name "Double quotes">
-<!ENTITY double_guillemets.name "Double guillemets">
-<!ENTITY replace_double_primes.label "&quot;Quoted text&quot;">
+<!ENTITY replace_double_primes.label '"Quoted text"'>
+<!ENTITY double_primes.label "&replace_double_primes.label; (No change)">
+<!ENTITY double_quotes.label "“Quoted text” (Double quotes)">
+<!ENTITY double_guillemets.label "«Quoted text» (Double guillemets)">
 
-<!ENTITY single_primes.name "Single primes">
-<!ENTITY single_quotes.name "Single quotes">
-<!ENTITY single_guillemets.name "Single guillemets">
 <!ENTITY replace_single_primes.label "'Quoted text'">
+<!ENTITY single_primes.label "&replace_single_primes.label; (No change)">
+<!ENTITY single_quotes.label "‘Quoted text’ (Single quotes)">
+<!ENTITY single_guillemets.label "‹Quoted text› (Single guillemets)">
 
 <!ENTITY apostrophes.name "Apostrophes">
 <!ENTITY replace_prime_in_word.label "Bob's → Bob’s, Max' → Max’ (&apostrophes.name;)">

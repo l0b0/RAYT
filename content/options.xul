@@ -40,8 +40,8 @@
 <prefwindow id="rayt-preferences" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" title="&prefwindow.title;">
   <prefpane id="pane1" label="&pane1.title;">
     <preferences>
-      <preference id="double_primes_style" name="extensions.rayt.double_primes_style" type="int"/>
-      <preference id="single_primes_style" name="extensions.rayt.single_primes_style" type="int"/>
+      <preference id="double_primes_style" name="extensions.rayt.double_primes_style" type="string"/>
+      <preference id="single_primes_style" name="extensions.rayt.single_primes_style" type="string"/>
       <preference id="replace_prime_in_word" name="extensions.rayt.replace_prime_in_word" type="bool"/>
       <preference id="replace_ellipsis" name="extensions.rayt.replace_ellipsis" type="bool"/>
       <preference id="replace_numero" name="extensions.rayt.replace_numero" type="bool"/>
@@ -58,9 +58,9 @@
 				<menulist id="select_double_primes_style"
 									preference="double_primes_style">
 					<menupopup>
-						<menuitem class="disabled" label="&replace_double_primes.label; (&double_primes.name;)" value="0"/>
-						<menuitem label="“Quoted text” (&double_quotes.name;)" value="1"/>
-						<menuitem label="«Quoted text» (&double_guillemets.name;)" value="2"/>
+						<menuitem label="&double_primes.label;" value="disabled"/>
+						<menuitem label="&double_quotes.label;" value="quotes"/>
+						<menuitem label="&double_guillemets.label;" value="guillemets"/>
 					</menupopup>
 				</menulist>
 			</hbox>
@@ -70,9 +70,9 @@
 				<menulist id="select_single_primes_style"
 									preference="single_primes_style">
 					<menupopup>
-						<menuitem class="disabled" label="&replace_single_primes.label; (&single_primes.name;)" value="0"/>
-						<menuitem label="‘Quoted text’ (&single_quotes.name;)" value="1"/>
-						<menuitem label="‹Quoted text› (&single_guillemets.name;)" value="2"/>
+						<menuitem label="&single_primes.label;" value="disabled"/>
+						<menuitem label="&single_quotes.label;" value="quotes"/>
+						<menuitem label="&single_guillemets.label;" value="guillemets"/>
 					</menupopup>
 				</menulist>
 			</hbox>
