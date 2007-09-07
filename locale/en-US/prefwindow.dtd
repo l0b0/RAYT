@@ -3,11 +3,6 @@
 
 <!ENTITY rayt.label "Replace as you type">
 
-<!ENTITY text.example_1 "foo">
-<!ENTITY text.example_2 "bar">
-<!ENTITY number.example_1 "123">
-<!ENTITY number.example_2 "456">
-
 <!ENTITY replace_double_primes.label '"Quoted text"'>
 <!ENTITY double_primes.label "&replace_double_primes.label; (No change)">
 <!ENTITY double_quotes.label "“Quoted text” (Double quotes)">
@@ -22,13 +17,13 @@
 <!ENTITY replace_prime_in_word.label "Bob's → Bob’s, Max' → Max’ (&apostrophes.name;)">
 
 <!ENTITY ellipsis.name "Ellipsis">
-<!ENTITY replace_ellipsis.label "Some text... → Some text… (&ellipsis.name;)">
+<!ENTITY replace_triple_dots.label "Some text... → Some text… (&ellipsis.name;)">
 
 <!ENTITY numero.name "Numero">
-<!ENTITY replace_numero.label "No123  → №123 (&numero.name;)">
+<!ENTITY replace_no.label "No123  → №123 (&numero.name;)">
 
-<!ENTITY select_double_primes_style.accesskey "D">
-<!ENTITY select_single_primes_style.accesskey "S">
-<!ENTITY use_replace_prime_in_word.accesskey "A">
-<!ENTITY replace_ellipsis.accesskey "E">
-<!ENTITY replace_numero.accesskey "N">
+<!ENTITY double_primes_style.accesskey "D">
+<!ENTITY single_primes_style.accesskey "S">
+<!ENTITY replace_prime_in_word.accesskey "A">
+<!ENTITY replace_triple_dots.accesskey "E">
+<!ENTITY replace_no.accesskey "N">
