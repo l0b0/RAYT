@@ -43,8 +43,8 @@
       <preference id="double_primes_style" name="extensions.rayt.double_primes_style" type="string"/>
       <preference id="single_primes_style" name="extensions.rayt.single_primes_style" type="string"/>
       <preference id="replace_prime_in_word" name="extensions.rayt.replace_prime_in_word" type="bool"/>
-      <preference id="replace_ellipsis" name="extensions.rayt.replace_ellipsis" type="bool"/>
-      <preference id="replace_numero" name="extensions.rayt.replace_numero" type="bool"/>
+      <preference id="replace_triple_dots" name="extensions.rayt.replace_triple_dots" type="bool"/>
+      <preference id="replace_no" name="extensions.rayt.replace_no" type="bool"/>
       <!-- <preference id="boolpref1" name="extensions.rayt.boolpref" type="bool"/>
       <preference id="intpref1" name="extensions.rayt.intpref" type="int"/>
       <preference id="stringpref1" name="extensions.rayt.stringpref" type="string"/> note that this is only an ASCII string - use unichar for unicode strings -->
@@ -80,12 +80,12 @@
 			<checkbox id="enable_replace_prime_in_word"
 								label="&replace_prime_in_word.label;"
 								preference="replace_prime_in_word"/>
-			<checkbox id="enable_replace_ellipsis"
-								label="&replace_ellipsis.label;"
-								preference="replace_ellipsis"/>
-			<checkbox id="enable_replace_numero"
-								label="&replace_numero.label;"
-								preference="replace_numero"/>
+			<checkbox id="enable_replace_triple_dots"
+								label="&replace_triple_dots.label;"
+								preference="replace_triple_dots"/>
+			<checkbox id="enable_replace_no"
+								label="&replace_no.label;"
+								preference="replace_no"/>
 		</groupbox>
   </prefpane>
 </prefwindow>
